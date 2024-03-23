@@ -28,3 +28,38 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Building for github pages
+
+1. commit all your changes.
+```
+git checkout master
+git merge 1-some-feature-branch
+git commit -m "We did it!"
+```
+
+2. build the release
+```
+npm run release
+```
+
+3. commit the release
+```
+git add docs
+git commit -m "Release v1.2.3"
+```
+
+__Tip__: to change the commit message run `git commit --amend -m "New commit message"`
+
+4. tag the release
+```
+git tag v1.2.3
+```
+
+5. push the release
+```
+git push origin master --tags
+```
+
+5. check the release
+https://turbotobbe.github.com/twitch-overlays/
