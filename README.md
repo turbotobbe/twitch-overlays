@@ -32,6 +32,15 @@ export default {
 
 ## Building for github pages
 
+### script style
+
+Just fire away and follow the instructions.
+```
+./release.sh
+```
+
+### manually
+
 1. Commit all your changes and merge your feature branch into `master`:
 
 ```bash
@@ -69,8 +78,8 @@ git push origin master
 git push origin v$(node -p -e "require('./package.json').version")
 ```
 
-6. Check the release at the following URL, replacing `v1.2.3` with the new version number:
-https://turbotobbe.github.com/twitch-overlays/v1.2.3/
+6. Check the release at the following URL:
+https://turbotobbe.github.com/twitch-overlays/
 
 ## Dev tips
 
