@@ -3,11 +3,6 @@
   "private": true,
   "version": "1.0.9",
   "type": "module",
-  "author": {
-    "name": "Thobias Bergqvist",
-    "email": "thobias.bergqvist@gmail.com",
-    "url": "https://github.com/turbotobbe"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

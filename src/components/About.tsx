@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react';
+import { github } from '../links';
 
 interface Repository {
   name: string;
@@ -21,13 +22,13 @@ const About: FC = () => {
 
   useEffect(() => {
     const fetchRepo = async () => {
-      const response = await fetch(`https://api.github.com/repos/${import.meta.env.VITE_REPO_OWNER}/${import.meta.env.VITE_REPO_NAME}`);
+      const response = await fetch(github.repo.api);
       const data = await response.json();
       setRepo(data);
     };
 
     const fetchOwner = async () => {
-      const response = await fetch(`https://api.github.com/users/${import.meta.env.VITE_REPO_OWNER}`);
+      const response = await fetch(github.owner.api);
       const data = await response.json();
       setOwner(data);
     };
