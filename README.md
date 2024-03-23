@@ -72,3 +72,7 @@ git push origin v$(node -p -e "require('./package.json').version")
 6. Check the release at the following URL, replacing `v1.2.3` with the new version number:
 https://turbotobbe.github.com/twitch-overlays/v1.2.3/
 
+## Dev tips
+
+* `import reactLogo from './assets/react.svg';`
+* `const viteLogo = `${import.meta.env.BASE_URL}vite.svg`;`

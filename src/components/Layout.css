@@ -1,0 +1,38 @@
+.body {
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 1em;
+}
+
+aside {
+    width: 200px;
+    padding: 1em;
+    background-color: #f0f0f0;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: .2em;
+
+    .title {
+        font-size: 1.4em;
+        font-weight: 500;
+    }
+    .subtitle {
+        font-size: 1.2em;
+        font-weight: 400;
+    }
+}
+
+.sidebar ul {
+    list-style-type: none; /* remove default bullet points */
+    padding: 0; /* remove default padding */
+    margin: .4em; /* remove default margin */
+  }
+  
