@@ -29,37 +29,46 @@ export default {
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
+
 ## Building for github pages
 
-1. commit all your changes.
-```
+1. Commit all your changes and merge your feature branch into `master`:
+
+```bash
 git checkout master
 git merge 1-some-feature-branch
-git commit -m "We did it!"
 ```
 
-2. build the release
+2. Bump version in package.json. Choose one of the following commands based on the type of changes you've made:
+
+```bash
+npm version patch # for backward-compatible bug fixes
+npm version minor # for backward-compatible new features
+npm version major # for changes that break backward compatibility
 ```
+
+This command will also create a new commit and tag with the new version number.
+
+3. Build the release:
+
+```bash
 npm run release
 ```
 
-3. commit the release
-```
+4. Add the `docs` directory and commit the release. The commit message should include the new version number:
+
+```bash
 git add docs
-git commit -m "Release v1.2.3"
+git commit -m "Release v$(node -p -e "require('./package.json').version")"
 ```
 
-__Tip__: to change the commit message run `git commit --amend -m "New commit message"`
+5. Push the `master` branch and the new tag to the remote repository:
 
-4. tag the release
-```
-git tag v1.2.3
-```
-
-5. push the release
-```
-git push origin master --tags
+```bash
+git push origin master
+git push origin v$(node -p -e "require('./package.json').version")
 ```
 
-5. check the release
-https://turbotobbe.github.com/twitch-overlays/
+6. Check the release at the following URL, replacing `v1.2.3` with the new version number:
+https://turbotobbe.github.com/twitch-overlays/v1.2.3/
+
