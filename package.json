@@ -1,7 +1,7 @@
 {
   "name": "twitch-overlays",
   "private": true,
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "author": {
     "name": "Thobias Bergqvist",
