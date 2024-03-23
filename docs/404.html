@@ -21,8 +21,11 @@
       var url = location.href;
       var path = url.split(basePath)[1];
 
-      // Redirect to the path
-      location.replace(location.origin + basePath + path);
+      // Check if the path has a file extension
+      if (path.split("/").pop().indexOf(".") === -1) {
+        // Redirect to the path
+        location.replace(location.origin + basePath + path);
+      }
     </script>
   </head>
   <body></body>
