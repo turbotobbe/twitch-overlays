@@ -16,7 +16,7 @@ interface Owner {
   html_url: string;
 }
 
-const About: FC = () => {
+const GitHub: FC = () => {
   const [repo, setRepo] = useState<Repository | null>(null);
   const [owner, setOwner] = useState<Owner | null>(null);
 
@@ -46,9 +46,7 @@ const About: FC = () => {
       <h1>{repo.name}</h1>
       <p>{repo.description}</p>
       <p>
-        <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-          View on GitHub <span className="external-indicator">↗</span>
-        </a>
+        <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className='external'>{repo.html_url}</a>
       </p>
       <p>Stars: {repo.stargazers_count}</p>
       <p>Forks: {repo.forks_count}</p>
@@ -56,13 +54,11 @@ const About: FC = () => {
       <h2>Owner Information</h2>
       <p>Username: {owner.login}</p>
       <p>
-        <a href={owner.html_url} target="_blank" rel="noopener noreferrer">
-          View Profile on GitHub <span className="external-indicator">↗</span>
-        </a>
+        <a href={owner.html_url} target="_blank" rel="noopener noreferrer" className='external'>{owner.html_url}</a>
       </p>
       <img src={owner.avatar_url} alt={owner.login} />
     </div>
   );
 };
 
-export default About;
+export default GitHub;

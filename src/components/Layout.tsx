@@ -27,22 +27,19 @@ const Layout: FC<LayoutProps> = ({ children }) => {
                         <Link to="/page2">Page 2</Link>
                     </li>
                     <li>
-                        <Link to="/about">About</Link>
+                        <Link to="/github">GitHub</Link>
                     </li>
                 </ul>
                 <footer>
                     <hr />
                     <div>Version: {__APP_VERSION__}</div>
+
                     <div>
-                        <a href={github.repo.url} target="_blank" rel="noopener noreferrer">GitHub&nbsp;
-                            <span className="external-indicator">↗</span>
-                        </a>
+                        <a href={github.owner.url} target="_blank" rel="noopener noreferrer" className="external">{github.owner.name}</a>
                     </div>
 
                     <div>
-                        <a href={github.owner.url} target="_blank" rel="noopener noreferrer">{github.owner.name}&nbsp;
-                            <span className="external-indicator">↗</span>
-                        </a>
+                        <a href={github.repo.url} target="_blank" rel="noopener noreferrer" className="external">{github.repo.name}</a>
                     </div>
 
                     <div>© 2024 {import.meta.env.VITE_REPO_OWNER}</div>
