@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 import './Layout.css';
 import { Link } from 'react-router-dom';
 import { github } from '../links';
-const version = 'asd'
+
 interface LayoutProps {
     children: ReactNode;
 }
@@ -32,7 +32,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
                 </ul>
                 <footer>
                     <hr />
-                    <div>Version: {version}</div>
+                    <div>Version: {__APP_VERSION__}</div>
                     <div>
                         <a href={github.repo.url} target="_blank" rel="noopener noreferrer">GitHub&nbsp;
                             <span className="external-indicator">↗</span>
