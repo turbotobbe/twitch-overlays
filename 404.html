@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+
+      // this file is a workaround for the issue with vite and react-router-dom
+      
+      // the issue is that when you refresh the page on a route other than the root route
+      // the browser will try to fetch the file from the server and it will not find it
+      // so we need to redirect the user to the root route and let react-router-dom handle the routing
+
+      // for example the path /project/about will be redirected to /project
+      // and react-router-dom will handle the routing to the about page
+
+      // Get the base path
+      var basePath = location.pathname.split("/").slice(0, -1).join("/");
+
+      // Parse the URL parameter
+      var url = location.href;
+      var path = url.split(basePath)[1];
+
+      // Redirect to the path
+      location.replace(location.origin + basePath + path);
+    </script>
+  </head>
+  <body></body>
+</html>
