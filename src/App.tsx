@@ -11,7 +11,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router>
       <Layout>
         <Routes>
           <Route path="/about" element={<About />} />

@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import './Layout.css';
+import { Link } from 'react-router-dom';
 
 const repoOwner = import.meta.env.VITE_REPO_OWNER
 const repoName = import.meta.env.VITE_REPO_NAME
@@ -22,13 +23,13 @@ const Layout: FC<LayoutProps> = ({ children }) => {
                 {/* Add more sidebar elements here */}
                 <ul>
                     <li>
-                        <a href={`${import.meta.env.BASE_URL}`}>Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <a href={`${import.meta.env.BASE_URL}page2`}>Page 2</a>
+                        <Link to="/page2">Page 2</Link>
                     </li>
                     <li>
-                        <a href={`${import.meta.env.BASE_URL}about`}>About</a>
+                        <Link to="/about">About</Link>
                     </li>
                 </ul>
                 <ul>
